@@ -28,7 +28,7 @@ By identifying and documenting these vulnerabilities proactively, Sovereign-Scan
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/sovereign-scan.git
+git clone  https://github.com/TripleAxxx/Sovereign-scan.git
 cd sovereign-scan
 
 # Install dependencies
