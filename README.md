@@ -143,3 +143,44 @@ text
 
 The `data/taxonomy.json` entries are derived directly from the ARCANUM PI Taxonomy intents you reviewed — each `arcanumIntent` field maps to a documented taxonomy category[reference:0], and the prompts are original constructions following the attack patterns and example probes documented in the taxonomy's markdown files[reference:1][reference:2][reference:3][reference:4].
 
+
+
+
+## Research & Development Roadmap
+
+### Current Bottlenecks
+
+| Bottleneck | Impact | Grant-Funded Solution |
+|---|---|---|
+| **Heuristic scoring** | Pattern-matching produces false positives on nuanced responses and false negatives on obfuscated prompts | Fine-tuned BERT classifier (or LLM-as-judge) trained on 50 000+ labelled taxonomy pairs, targeting >92 % F1 |
+| **Single-threaded validation** | Playwright runs one test at a time; a 100-entry taxonomy takes minutes | Kubernetes-backed Playwright farm enabling 50+ parallel browser contexts |
+| **Limited taxonomy coverage** | 10 entries cover high-risk intents but miss 97 remaining taxonomy categories | Expand to 100+ entries with multi-language variants, obfuscation layers, and chained attack sequences |
+| **API rate limits** | OpenAI rate limits constrain throughput to ~3 requests/minute on free tiers | Multi-provider dispatch layer (OpenAI + Anthropic + Ollama) with adaptive back-off |
+| **No baseline comparison** | Cannot compare model safety across versions or providers | Automated differential reporting comparing any two models side-by-side |
+
+### Grant Funding Would Enable
+
+1. **Fine-tuned Safety Classifier** — Replace `engine/evaluator.js` heuristics with a production BERT model achieving research-grade accuracy
+2. **Taxonomy Expansion** — Grow from 10 to 100+ prompts covering all 18 ARCANUM intents with obfuscation variants
+3. **Parallel Validation** — Kubernetes Playwright farm for sub-second validation across large prompt corpora
+4. **Continuous Benchmarking** — CI/CD integration that tests model safety on every deployment
+5. **Academic Publication** — Curated dataset of 50 000+ labelled prompt/response pairs released under open license
+
+## Prerequisites
+
+- **Node.js 18+** (ESM required)
+- **Playwright Chromium** (`npx playwright install chromium`)
+- **OpenAI API key** (or local Ollama instance)
+- **Git**
+
+## Installation
+
+```bash
+git clone https://github.com/your-org/sovereign-scan.git
+cd sovereign-scan
+
+npm install
+npx playwright install chromium
+
+cp .env.example .env
+# Edit .env with your API key
