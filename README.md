@@ -143,9 +143,6 @@ text
 
 The `data/taxonomy.json` entries are derived directly from the ARCANUM PI Taxonomy intents you reviewed — each `arcanumIntent` field maps to a documented taxonomy category[reference:0], and the prompts are original constructions following the attack patterns and example probes documented in the taxonomy's markdown files[reference:1][reference:2][reference:3][reference:4].
 
-
-
-
 ## Research & Development Roadmap
 
 ### Current Bottlenecks
