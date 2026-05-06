@@ -39,8 +39,6 @@ sovereign-scan/
 ├── .env.example
 └── README.md
 
-text
-
 ## Research & Development Roadmap
 
 ### Current Bottlenecks
