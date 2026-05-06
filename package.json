@@ -1,7 +1,7 @@
 {
   "name": "sovereign-scan",
-  "version": "1.0.0",
-  "description": "Automated LLM safety benchmarking tool for testing cyber-reconnaissance data leakage",
+  "version": "1.0.0-alpha",
+  "description": "Automated LLM safety benchmarking tool — maps prompt injection attack surfaces using the ARCANUM PI Taxonomy with Playwright-validated response verification",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,18 +10,22 @@
   },
   "keywords": [
     "llm-safety",
+    "prompt-injection",
     "red-team",
-    "security",
+    "arcanum-taxonomy",
+    "ai-security",
     "benchmark",
-    "ai-safety"
+    "playwright",
+    "safety-alignment"
   ],
-  "author": "Sovereign-Scan Research",
+  "author": "Sovereign-Scan Research (Alpha)",
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.3.0",
     "dotenv": "^16.4.5",
     "openai": "^4.67.0",
-    "playwright": "^1.48.0"
+    "playwright": "^1.48.0",
+    "winston": "^3.14.2"
   },
   "engines": {
     "node": ">=18.0.0"
