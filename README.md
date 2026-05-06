@@ -179,3 +179,5 @@ npx playwright install chromium
 
 cp .env.example .env
 # Edit .env with your API key
+
+npm start
